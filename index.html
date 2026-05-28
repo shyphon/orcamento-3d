@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-<html lang="pt-BR" data-theme="light" style=""><head><meta charset="utf-8">
-    
-    
-    <title>Orçamento de Produto de Impressão 3D</title>
-    <style>
+
+<html data-theme="light" lang="pt-BR" style=""><head><meta charset="utf-8"/>
+<title>Orçamento de Produto de Impressão 3D</title>
+<style>
       /* Reset e Variáveis */
       :root {
         --primary-color: #84cc16;
@@ -392,168 +391,279 @@
         }
       }
     </style>
-  </head>
-  <body style="">
-    <div class="document-container">
-      <div class="page-actions no-print">
-        <button class="btn">Imprimir / Salvar em PDF</button>
-      </div>
-
-      <header>
-        <div class="logo-container">
-          <img src="https://www.genspark.ai/api/files/s/3QtZ1Vs5" alt="PrimeForm 3D Logo" data-height-listener-added="true">
-        </div>
-        <div class="company-info">
-          <input type="text" class="company-name" value="PRIMEFORM 3D" placeholder="Nome da Empresa">
-          <input type="text" value="CNPJ: 00.000.000/0001-00" placeholder="CNPJ">
-          <input type="text" value="(00) 00000-0000" placeholder="Telefone">
-          <input type="text" value="contato@primeform3d.com.br" placeholder="E-mail">
-          <input type="text" value="Rua da Impressão, 123 - Centro, Cidade - UF" placeholder="Endereço">
-        </div>
-      </header>
-
-      <h1>Orçamento de Produto de Impressão 3D</h1>
-
-      <div class="meta-grid">
-        <div class="form-group">
-          <label>Nº Orçamento:</label>
-          <input type="text" value="PF3D-2023-001">
-        </div>
-        <div class="form-group">
-          <label>Data:</label>
-          <input type="date" id="data-orcamento">
-        </div>
-        <div class="form-group" style="grid-column: span 2">
-          <label>Cliente / Empresa:</label>
-          <input type="text" placeholder="Nome completo ou Razão Social">
-        </div>
-        <div class="form-group" style="grid-column: span 2">
-          <label>Validade da Proposta:</label>
-          <input type="text" value="15 dias a partir da data de emissão">
-        </div>
-      </div>
-
-      <div class="items-section">
-        <h3>Itens do Orçamento</h3>
-        <table id="items-table">
-          <thead>
-            <tr>
-              <th style="width: 90px">Item</th>
-              <th style="width: 250px">Nome do Produto</th>
-              <th>Filamento</th>
-              <th style="width: 70px">Peso (g)</th>
-              <th>Tempo Prod.</th>
-              <th>Pintura</th>
-              <th>Prazo Ent.</th>
-              <th class="col-value">Valor (R$)</th>
-              <th class="col-actions no-print">Ações</th>
-            </tr>
-          </thead>
-          <tbody id="items-body">
-            
-            <tr>
-              <td><input type="text" value="1" placeholder="1"></td>
-              <td><input type="text" placeholder="Ex: Engrenagem"></td>
-              <td>
-                <select>
-                  <option value="PLA">PLA</option>
-                  <option value="ABS">ABS</option>
-                  <option value="PETG">PETG</option>
-                  <option value="TPU">TPU</option>
-                  <option value="Resina">Resina</option>
-                  <option value="Outro">Outro</option>
-                </select>
-              </td>
-              <td><input type="number" min="0" placeholder="0"></td>
-              <td><input type="text" placeholder="Ex: 12h"></td>
-              <td>
-                <select>
-                  <option value="Nao">Não</option>
-                  <option value="Primer">Primer</option>
-                  <option value="Basica">Básica</option>
-                  <option value="Detalhada">Detalhada</option>
-                </select>
-              </td>
-              <td><input type="text" placeholder="Ex: 3 dias"></td>
-              <td class="col-value">
-                <input type="text" class="input-valor" value="0,00">
-              </td>
-              <td class="col-actions no-print">
-                <button class="btn btn-danger">X</button>
-              </td>
-            </tr>
-            
-            <tr>
-              <td><input type="text" value="2" placeholder="2"></td>
-              <td><input type="text" placeholder="Ex: Suporte Articulado"></td>
-              <td>
-                <select>
-                  <option value="PLA">PLA</option>
-                  <option value="ABS">ABS</option>
-                  <option value="PETG">PETG</option>
-                  <option value="TPU">TPU</option>
-                  <option value="Resina">Resina</option>
-                  <option value="Outro">Outro</option>
-                </select>
-              </td>
-              <td><input type="number" min="0" placeholder="0"></td>
-              <td><input type="text" placeholder="Ex: 8h"></td>
-              <td>
-                <select>
-                  <option value="Nao">Não</option>
-                  <option value="Primer">Primer</option>
-                  <option value="Basica">Básica</option>
-                  <option value="Detalhada">Detalhada</option>
-                </select>
-              </td>
-              <td><input type="text" placeholder="Ex: 2 dias"></td>
-              <td class="col-value">
-                <input type="text" class="input-valor" value="0,00">
-              </td>
-              <td class="col-actions no-print">
-                <button class="btn btn-danger">X</button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-
-        <button class="btn btn-outline no-print">+ Adicionar Item</button>
-
-        <div class="total-container">
-          <div class="total-box">
-            <span>TOTAL GERAL:</span>
-            <span id="total-geral">R$ 0,00</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="observations">
-        <h3>Observações Adicionais</h3>
-        <textarea placeholder="Insira detalhes sobre preenchimento, resolução de camada, links para download de arquivos STL/OBJ, ou condições específicas de pagamento..."></textarea>
-      </div>
-
-      <div class="footer-note">
-        <strong>Nota Comercial:</strong> Este orçamento é uma estimativa baseada nas especificações fornecidas. Valores
+</head>
+<body style="">
+<div class="document-container">
+<div class="page-actions no-print">
+<button class="btn" id="print-btn">Imprimir / Salvar em PDF</button>
+</div>
+<header>
+<div class="logo-container">
+<img alt="PrimeForm 3D Logo" data-height-listener-added="true" src="logo.png"/>
+</div>
+<div class="company-info">
+<input class="company-name" placeholder="Nome da Empresa" type="text" value="PRIMEFORM 3D"/>
+<!-- <input placeholder="CNPJ" type="text" value="CNPJ: 00.000.000/0001-00"/> -->
+<input placeholder="Telefone" type="text" value="(61) 99318-3056"/>
+<input placeholder="E-mail" type="text" value="3d.primeform@gmail.com"/>
+<input placeholder="Endereço" type="text" value="Anápolis - GO"/>
+</div>
+</header>
+<h1>Orçamento de Produto de Impressão 3D</h1>
+<div class="meta-grid">
+<div class="form-group">
+<label>Nº Orçamento:</label>
+<input type="text" value="PF3D-2023-001"/>
+</div>
+<div class="form-group">
+<label>Data:</label>
+<input id="data-orcamento" type="date"/>
+</div>
+<div class="form-group" style="grid-column: span 2">
+<label>Cliente / Empresa:</label>
+<input placeholder="Nome completo ou Razão Social" type="text"/>
+</div>
+<div class="form-group" style="grid-column: span 2">
+<label>Validade da Proposta:</label>
+<input type="text" value="15 dias a partir da data de emissão"/>
+</div>
+</div>
+<div class="items-section">
+<h3>Itens do Orçamento</h3>
+<table id="items-table">
+<thead>
+<tr>
+<th style="width: 90px">Item</th>
+<th style="width: 250px">Nome do Produto</th>
+<th>Filamento</th>
+<th style="width: 70px">Peso (g)</th>
+<th>Tempo Prod.</th>
+<th>Pintura</th>
+<th>Prazo Ent.</th>
+<th class="col-value">Valor (R$)</th>
+<th class="col-actions no-print">Ações</th>
+</tr>
+</thead>
+<tbody id="items-body">
+<tr>
+<td><input placeholder="1" type="text" value="1"/></td>
+<td><input placeholder="Ex: Engrenagem" type="text"/></td>
+<td>
+<select>
+<option value="PLA">PLA</option>
+<option value="ABS">ABS</option>
+<option value="PETG">PETG</option>
+<option value="TPU">TPU</option>
+<option value="Resina">Resina</option>
+<option value="Outro">Outro</option>
+</select>
+</td>
+<td><input min="0" placeholder="0" type="number"/></td>
+<td><input placeholder="Ex: 12h" type="text"/></td>
+<td>
+<select>
+<option value="Nao">Não</option>
+<option value="Primer">Primer</option>
+<option value="Basica">Básica</option>
+<option value="Detalhada">Detalhada</option>
+</select>
+</td>
+<td><input placeholder="Ex: 3 dias" type="text"/></td>
+<td class="col-value">
+<input class="input-valor" type="text" value="0,00"/>
+</td>
+<td class="col-actions no-print">
+<button class="btn btn-danger remove-btn">X</button>
+</td>
+</tr>
+<tr>
+<td><input placeholder="2" type="text" value="2"/></td>
+<td><input placeholder="Ex: Suporte Articulado" type="text"/></td>
+<td>
+<select>
+<option value="PLA">PLA</option>
+<option value="ABS">ABS</option>
+<option value="PETG">PETG</option>
+<option value="TPU">TPU</option>
+<option value="Resina">Resina</option>
+<option value="Outro">Outro</option>
+</select>
+</td>
+<td><input min="0" placeholder="0" type="number"/></td>
+<td><input placeholder="Ex: 8h" type="text"/></td>
+<td>
+<select>
+<option value="Nao">Não</option>
+<option value="Primer">Primer</option>
+<option value="Basica">Básica</option>
+<option value="Detalhada">Detalhada</option>
+</select>
+</td>
+<td><input placeholder="Ex: 2 dias" type="text"/></td>
+<td class="col-value">
+<input class="input-valor" type="text" value="0,00"/>
+</td>
+<td class="col-actions no-print">
+<button class="btn btn-danger remove-btn">X</button>
+</td>
+</tr>
+</tbody>
+</table>
+<button class="btn btn-outline no-print" id="add-item-btn">+ Adicionar Item</button>
+<div class="total-container">
+<div class="total-box">
+<span>TOTAL GERAL:</span>
+<span id="total-geral">R$ 0,00</span>
+</div>
+</div>
+</div>
+<div class="observations">
+<h3>Observações Adicionais</h3>
+<textarea placeholder="Insira detalhes sobre preenchimento, resolução de camada, links para download de arquivos STL/OBJ, ou condições específicas de pagamento..."></textarea>
+</div>
+<div class="footer-note">
+<strong>Nota Comercial:</strong> Este orçamento é uma estimativa baseada nas especificações fornecidas. Valores
         e prazos podem sofrer alterações caso os modelos 3D apresentem erros que exijam reparo ou se houver mudança de
         escopo. O início da produção ocorre mediante aprovação formal desta proposta.
       </div>
+<div class="signatures">
+<div class="signature-box">
+<div class="signature-line"></div>
+<p>PrimeForm 3D</p>
+<span>Departamento Comercial</span>
+</div>
+<div class="signature-box">
+<div class="signature-line"></div>
+<p>Aprovação do Cliente</p>
+<span>Assinatura / Carimbo</span>
+</div>
+</div>
+</div>
+<script crossorigin="anonymous" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' defer="" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
 
-      <div class="signatures">
-        <div class="signature-box">
-          <div class="signature-line"></div>
-          <p>PrimeForm 3D</p>
-          <span>Departamento Comercial</span>
-        </div>
-        <div class="signature-box">
-          <div class="signature-line"></div>
-          <p>Aprovação do Cliente</p>
-          <span>Assinatura / Carimbo</span>
-        </div>
-      </div>
-    </div>
+  const itemsBody = document.getElementById('items-body');
+  const addItemBtn = document.getElementById('add-item-btn');
+  const totalGeral = document.getElementById('total-geral');
+  const printBtn = document.getElementById('print-btn');
 
-    
-  
+  function atualizarTotal() {
+    const valores = document.querySelectorAll('.input-valor');
 
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
-</body></html>
+    let total = 0;
+
+    valores.forEach(input => {
+      let valor = input.value || '0';
+
+      valor = valor
+        .replace(/R\$/g, '')
+        .replace(/\./g, '')
+        .replace(',', '.')
+        .trim();
+
+      total += parseFloat(valor) || 0;
+    });
+
+    totalGeral.textContent =
+      'R$ ' + total.toFixed(2).replace('.', ',');
+  }
+
+  function atualizarNumeracao() {
+    const linhas = itemsBody.querySelectorAll('tr');
+
+    linhas.forEach((linha, index) => {
+      const campo = linha.querySelector('td input');
+
+      if (campo) {
+        campo.value = index + 1;
+        campo.placeholder = index + 1;
+      }
+    });
+  }
+
+  function adicionarEventoRemover(botao) {
+    botao.addEventListener('click', () => {
+
+      const linhas = itemsBody.querySelectorAll('tr');
+
+      if (linhas.length <= 1) {
+        return;
+      }
+
+      botao.closest('tr').remove();
+
+      atualizarNumeracao();
+      atualizarTotal();
+    });
+  }
+
+  document.querySelectorAll('.remove-btn').forEach(btn => {
+    adicionarEventoRemover(btn);
+  });
+
+  document.querySelectorAll('.input-valor').forEach(input => {
+    input.addEventListener('input', atualizarTotal);
+  });
+
+  if (addItemBtn) {
+    addItemBtn.addEventListener('click', () => {
+
+      const linhas = itemsBody.querySelectorAll('tr');
+      const novaLinha = linhas[0].cloneNode(true);
+
+      const novoNumero = linhas.length + 1;
+
+      const inputs = novaLinha.querySelectorAll('input');
+
+      inputs.forEach(input => {
+
+        if (input.classList.contains('input-valor')) {
+          input.value = '0,00';
+        }
+        else if (input.type === 'text' || input.type === 'number') {
+          input.value = '';
+        }
+
+      });
+
+      const primeiroCampo = novaLinha.querySelector('td input');
+
+      if (primeiroCampo) {
+        primeiroCampo.value = novoNumero;
+        primeiroCampo.placeholder = novoNumero;
+      }
+
+      novaLinha.querySelectorAll('select').forEach(select => {
+        select.selectedIndex = 0;
+      });
+
+      const novoBotao = novaLinha.querySelector('.remove-btn');
+
+      if (novoBotao) {
+        const cloneBotao = novoBotao.cloneNode(true);
+        novoBotao.parentNode.replaceChild(cloneBotao, novoBotao);
+        adicionarEventoRemover(cloneBotao);
+      }
+
+      const novoValor = novaLinha.querySelector('.input-valor');
+
+      if (novoValor) {
+        novoValor.addEventListener('input', atualizarTotal);
+      }
+
+      itemsBody.appendChild(novaLinha);
+
+      atualizarTotal();
+    });
+  }
+
+  if (printBtn) {
+    printBtn.addEventListener('click', () => {
+      window.print();
+    });
+  }
+
+  atualizarTotal();
+});
+</script></body></html>
